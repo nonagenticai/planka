@@ -31,9 +31,7 @@ const buildUserData = () => {
     const username = process.env.DEFAULT_ADMIN_USERNAME.toLowerCase();
 
     if (username.length < 3 || username.length > 32 || !USERNAME_REGEX.test(username)) {
-      console.warn(
-        `Warning: DEFAULT_ADMIN_USERNAME "${process.env.DEFAULT_ADMIN_USERNAME}" is invalid; skipping.`,
-      );
+      console.warn('Warning: DEFAULT_ADMIN_USERNAME is invalid; skipping.');
     } else {
       data.username = username;
     }
