@@ -18,11 +18,9 @@ module.exports = {
   },
 
   fn(inputs) {
-    const bytes = crypto.randomBytes(inputs.size);
-
     let result = '';
     for (let i = 0; i < inputs.size; i += 1) {
-      result += CHARS[bytes[i] % 62];
+      result += CHARS[crypto.randomInt(CHARS.length)];
     }
 
     return result;
